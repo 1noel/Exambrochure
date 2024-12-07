@@ -1,0 +1,92 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+	<title>Register</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body class="bg-gray-100 h-screen flex items-center justify-center px-5">
+	<div class="border rounded-lg shadow p-5 md:w-1/3 w-full bg-white">
+		<form>
+			<div class="my-1">
+				<h1 class="text-center text-2xl">Register</h1>
+			</div>
+
+			<div class="mt-2">
+				<label class="text-sm">Names</label>
+				<div class="mt-1 flex items-center border rounded-lg px-2">
+					<i class="fa-solid fa-id-card text-gray-400 "></i>
+					<input class=" focus:outline-none text-sm w-full px-2 py-2 rounded-lg" type="text" placeholder="Full name" required>
+				</div>
+			</div>
+
+            <div class="mt-2">
+				<label class="text-sm">Department</label>
+				<div class="mt-1 flex items-center border rounded-lg px-2">
+					<i class="fas fa-book text-gray-400"></i>
+					<input class=" focus:outline-none text-sm w-full px-2 py-2 rounded-lg" type="text" placeholder="Department" required>
+				</div>
+			</div>
+
+			 <div class="mt-2">
+				<label class="text-sm">Phone</label>
+				<div class="mt-1 flex items-center border rounded-lg px-2">
+					<i class="fa-solid fa-phone text-gray-400 flex"> <span class="text-sm ms-2">+250</span> </i>
+					<input id="phone" class=" focus:outline-none text-sm w-full px-2 py-2 rounded-lg" type="text" placeholder="" required maxlength="10">
+				</div>
+				<div id="message" class="hidden text-sm text-red-500">Please write only number......</div>
+			</div>
+
+
+			<div class="mt-2">
+				<label class="text-sm">E-mail</label>
+				<div class="mt-1 flex items-center border rounded-lg px-2">
+					<i class="fas fa-envelope text-gray-400"></i>
+					<input class=" focus:outline-none text-sm w-full px-2 py-2 rounded-lg" type="email" placeholder="E-mail" required>
+				</div>
+			</div>
+
+			<div class="mt-2">
+				<label class="text-sm">Password</label>
+				<div class="mt-1 flex items-center border rounded-lg px-2">
+					<i class="fas fa-key text-gray-400"></i>
+					<input class=" focus:outline-none text-sm w-full px-2 py-2 rounded-lg" type="password" placeholder="Password" required>
+				</div>
+			</div>
+
+			<div class="text-center mt-3">
+				<button class="bg-blue-600 px-8 py-1  rounded-xl text-white text-sm">Register</button>
+			</div>
+
+				<div class="text-center mt-3 justify-center flex ">
+				<button class="border px-4 py-1  rounded-3xl  text-sm flex items-center"> <span class="mr-1"> <img src="Images/google.png" class="w-4"> </span> Continue with google</button>
+				
+			</div>
+
+			<div class="text-center mt-3">
+				<a href="index.html"> <p class="text-blue-600 text-sm">Back to Login</p> </a>
+			</div>
+
+		</form>
+	</div>
+
+
+		<script>
+		const inputs = document.querySelectorAll('input[type="text"], input[type="email"], input[type="password"]');
+		const message = document.getElementById('message');
+
+		inputs.forEach(input => {
+			input.addEventListener('input', () => {
+				message.classList.remove('hidden');
+			});
+		});
+	</script>
+</body>
+</html>

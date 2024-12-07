@@ -1,0 +1,419 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="tailwind.js    "></script>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        #sidebar.active {
+            display: block;
+        }
+
+        .chat-modal {
+            bottom: 4rem; /* Adjust the bottom position as needed */
+            right: 1rem; /* Adjust the right position as needed */
+            max-width: 300px;
+        }
+
+        .my-2.fixed {
+    position: fixed;
+    bottom: 1rem; /* 4 units * 0.25rem */
+    right: 1rem; /* 4 units * 0.25rem */
+}
+
+/* Styles for smaller screens */
+@media (max-width: 600px) {
+    .my-2.fixed {
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
+    </style>
+</head>
+<body class="bg-gray-100">
+
+<div class="flex">
+    <!-- Sidebar -->
+    <div id="sidebar" class="md:w-1/5 w-3/5 min-h-screen shadow-md bg-white transition-all duration-300 md:block hidden fixed md:relative">
+        <div class="p-3 flex justify-center">
+           <p class="text-center ms-2 mt-2 text-md">  <a href="profile.html">Noel IMANISHIMWE</a></p>
+        </div>
+        <hr>
+
+        <nav>
+            <ul class="py-5">
+                <li class=" px-5 py-3 cursor-pointer text-md font-medium"> <a href="dashboard.html" class=""> <i class="fa fa-gauge-high"></i> Dashboard</li> </a>
+                <li class=" px-5 py-3 cursor-pointer text-md font-medium"> <a href="changepassword.html" class=""> <i class="fa fa-user-shield"></i> Security</li> </a>
+                <li class=" px-5 py-3 cursor-pointer text-md font-medium"> <a href="AIchat.html" class=""> <i class="fa fa-comment-dots"></i> AI chat</li> </a>
+                <li class=" px-5 py-3 cursor-pointer text-md font-medium absolute md:bottom-5 bottom-10 "> <i class="fa-regular fa-circle-question"></i> <a href="help.html">Help</a></li>
+            </ul>
+        </nav>
+       
+        
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="w-full md:w-4/5 transition-all duration-300 ">
+
+        <div class="w-full p-1 bg-white  shadow-md md:px-5 px-2 ">
+            <div class="flex justify-between items-center">
+                <!-- Toggle Button -->
+                <div id="toggle-button" class="">
+                    <i class="fa-solid fa-bars cursor-pointer" onclick="toggleSidebar()"></i>
+                </div>
+                <!-- Search Box -->
+                <div class="flex items-center border border-blue-600 rounded-lg overflow-hidden">
+                    <input type="text" placeholder="Search study...." class="px-2 py-1 w-44 focus:outline-none">
+                    <button class="bg-blue-600 px-2 py-1">
+                        <i class="fas fa-search text-white"></i>
+                    </button>
+                </div>
+           
+                       <!-- User Status -->
+                       <div class="flex justify-center items-center md:space-x-5 space-x-3">
+                        <div class="">
+                            <div class="flex justify-center">
+                                <img src="Images/user.png" class="w-6 shadow-md rounded-full ms-2">
+                            </div>
+                            <span class="text-xs text-center text-green-500">Online</span>
+                        </div>
+    
+                       <div>
+                        <a href="" class="text-lg font-medium text-gray-700">Logout <i class="fa-solid fa-right-from-bracket hidden md:inline"></i> </a>
+                       </div>
+                    </div>
+
+            </div>
+        </div>
+        <hr>
+
+
+
+          <!-- Additional content can go here -->
+
+    <div class="m-5">
+	
+        <div class="bg-white p-2 mb-5 rounded-md shadow-sm ">
+            <h2 class="text-center text-lg font-medium text-blue-600">Available Bronchure (6)</h2>
+        </div>
+			<div class="grid grid-cols-2 md:grid-cols-5 gap-5">
+
+				<div class="border-2 border-blue-600 rounded-lg bg-white">
+
+					<div class="float-right pr-1">
+						<span><i class="fa-solid fa-star text-yellow-600"></i></span>
+						<span><i class="fa-solid fa-star text-yellow-600"></i></span>
+						<span><i class="fa-solid fa-star-half-stroke text-yellow-600"></i></span>
+					</div>
+                    
+					<img src="Images/pdf.png" class="w-full md:h-20 h-32">
+					<div class="p-2">
+						<h1 class="text-sm font-medium">Algorithm and Data structure using C proramming</h1>
+					</div>
+
+					<div class="pb-2 text-center">
+						<button data-modal="modal1" class="bg-blue-600 open-modal rounded-md px-5 py-1.5 text-white text-xs">View File <i class="fa-regular fa-eye"></i> </button>
+					</div>
+
+				</div>
+
+				<div class="border-2 border-blue-600 rounded-lg bg-white">
+
+					<div class="float-right pr-1">
+						<span><i class="fa-solid fa-star text-yellow-600"></i></span>
+						<span><i class="fa-solid fa-star text-yellow-600"></i></span>
+						<span><i class="fa-solid fa-star-half-stroke text-yellow-600"></i></span>
+					</div>
+
+					<img src="Images/docs.png" class="w-full md:h-20 h-32">
+					<div class="p-2">
+						<h1 class="text-sm font-medium">Algorithm and Data structure using C proramming</h1>
+					</div>
+
+					<div class="pb-2 text-center">
+						<button data-modal="modal1" class="bg-blue-600 open-modal rounded-md px-5 py-1.5 text-white text-xs">View File <i class="fa-regular fa-eye"></i> </button>
+					</div>
+
+				</div>
+
+				<div class="border-2 border-blue-600 rounded-lg bg-white">
+
+					<div class="float-right pr-1">
+						<span><i class="fa-solid fa-star text-yellow-600"></i></span>
+						<span><i class="fa-solid fa-star text-yellow-600"></i></span>
+						<span><i class="fa-solid fa-star-half-stroke text-yellow-600"></i></span>
+					</div>
+
+					<img src="Images/pwp.png" class="w-full md:h-20 h-32">
+					<div class="p-2">
+						<h1 class="text-sm font-medium">Algorithm and Data structure using C proramming</h1>
+					</div>
+
+					<div class="pb-2 text-center">
+						<button data-modal="modal1" class="bg-blue-600 open-modal rounded-md px-5 py-1.5 text-white text-xs">View File <i class="fa-regular fa-eye"></i> </button>
+					</div>
+
+				</div>
+
+				<div class="border-2 border-blue-600 rounded-lg bg-white">
+
+					<div class="float-right pr-1">
+						<span><i class="fa-solid fa-star text-yellow-600"></i></span>
+						<span><i class="fa-solid fa-star text-yellow-600"></i></span>
+						<span><i class="fa-solid fa-star-half-stroke text-yellow-600"></i></span>
+					</div>
+
+					<img src="Images/pdf.png" class="w-full md:h-20 h-32">
+					<div class="p-2">
+						<h1 class="text-sm font-medium">Algorithm and Data structure using C proramming</h1>
+					</div>
+
+					<div class="pb-2 text-center">
+						<button data-modal="modal1" class="bg-blue-600 open-modal rounded-md px-5 py-1.5 text-white text-xs">View File <i class="fa-regular fa-eye"></i> </button>
+					</div>
+
+				</div>
+
+				<div class="border-2 border-blue-600 rounded-lg bg-white">
+
+					<div class="float-right pr-1">
+						<span><i class="fa-solid fa-star text-yellow-600"></i></span>
+						<span><i class="fa-solid fa-star text-yellow-600"></i></span>
+						<span><i class="fa-solid fa-star-half-stroke text-yellow-600"></i></span>
+					</div>
+
+					<img src="Images/ppt.png" class="w-full md:h-20 h-32">
+					<div class="p-2">
+						<h1 class="text-sm font-medium">Algorithm and Data structure using C proramming</h1>
+					</div>
+
+					<div class="pb-2 text-center">
+						<button data-modal="modal1" class="bg-blue-600 open-modal rounded-md px-5 py-1.5 text-white text-xs">View File <i class="fa-regular fa-eye"></i> </button>
+					</div>
+
+				</div>
+
+				
+                <div class="border-2 border-blue-600 rounded-lg bg-white">
+
+					<div class="float-right pr-1">
+						<span><i class="fa-solid fa-star text-yellow-600"></i></span>
+						<span><i class="fa-solid fa-star text-yellow-600"></i></span>
+						<span><i class="fa-solid fa-star-half-stroke text-yellow-600"></i></span>
+					</div>
+
+					<img src="Images/docs.png" class="w-full md:h-20 h-32">
+					<div class="p-2">
+						<h1 class="text-sm font-medium">Algorithm and Data structure using C proramming</h1>
+					</div>
+
+					<div class="pb-2 text-center">
+						<button data-modal="modal1" class="bg-blue-600 open-modal rounded-md px-5 py-1.5 text-white text-xs">View File <i class="fa-regular fa-eye"></i> </button>
+					</div>
+
+				</div>
+        
+                <div class="border-2 border-blue-600 rounded-lg bg-white">
+
+					<div class="float-right pr-1">
+						<span><i class="fa-solid fa-star text-yellow-600"></i></span>
+						<span><i class="fa-solid fa-star text-yellow-600"></i></span>
+						<span><i class="fa-solid fa-star-half-stroke text-yellow-600"></i></span>
+					</div>
+
+					<img src="Images/pdf.png" class="w-full md:h-20 h-32">
+					<div class="p-2">
+						<h1 class="text-sm font-medium">Algorithm and Data structure using C proramming</h1>
+					</div>
+
+					<div class="pb-2 text-center">
+						<button data-modal="modal1" class="bg-blue-600 open-modal rounded-md px-5 py-1.5 text-white text-xs">View File <i class="fa-regular fa-eye"></i> </button>
+					</div>
+
+				</div>
+                
+
+			</div>
+
+
+
+
+
+
+        <div class="m-5">
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-5">
+                <!-- Your grid items here -->
+
+                <!-- Chating icon -->
+                <div class="my-2 fixed md:bottom-4 bottom-0 right-4">
+                    <span class="bg-white text-blue-600 border-2 border-blue-600 text-2xl py-1.5 px-2.5 rounded-3xl cursor-pointer" onclick="openChatModal()">Feedback <i class="fa-regular fa-comment-dots"></i></span>
+                </div>
+                <!-- Chat Modal -->
+                <div id="chatModal" class="fixed hidden chat-modal bg-white border border-gray-300 shadow-lg rounded-lg p-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <h2 class="text-md font-semibold">Chat</h2>
+                        <button class="text-gray-500" onclick="closeChatModal()"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <div class="mb-4">
+                        <!-- Chat content goes here -->
+                       
+                    </div>
+
+                    <div class="flex justify-between space-x-5">
+                    <span class="text-lg">Hello</span>
+                    <span class="my-4 text-lg">Hi</span>
+                    </div>
+                    
+                    <div class="flex space-x-2">
+                    <input type="text" class="w-10/12 px-2 py-1 border border-gray-300 rounded-3xl" placeholder="Type a message...">
+                    <button class=" bg-blue-600 text-white text-lg rounded-full px-2.5 py-1"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Modal 1 -->
+    <div id="modal1" class="fixed inset-0 bg-gray-600 bg-opacity-70 flex items-center justify-center hidden modal ">
+        <div class="bg-white rounded-lg md:w-1/3 w-full md:mx-0 mx-5">
+            <div class="px-3  flex justify-end  ">
+                <button class="text-gray-500 close-modal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="p-4">
+                <h1 class="text-center my-3 text-lg font-medium text-blue-600">Select Payment method</h1>
+            	
+                <div class="flex justify-center space-x-8 mb-3">
+                    <div> 
+                        <img src="Images/mas.png" alt="" class="md:w-14 w-full h-14" >
+                    </div>
+                    <div> 
+                        <img src="Images/pay.png" alt="" class="md:w-14 w-full h-14" >
+                    </div>
+                </div>
+
+            	
+                <form class="simpleForm" >
+                    <div class="mb-4">
+                        <input type="text" class="name focus:outline-none border-blue-600 w-full px-3 py-2 border rounded" required placeholder="Enter phone number" maxlength="10" pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                    </div>
+                    <div class="mb-4">
+                        <input type="number" class="email w-full px-3 py-2 border border-blue-600 focus:outline-none rounded" placeholder="5000" required readonly>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-blue-500 text-white px-10 py-1 rounded">Pay</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('hidden');
+        sidebar.classList.toggle('active');
+    }
+
+    document.addEventListener('click', function(event) {
+        const sidebar = document.getElementById('sidebar');
+        const toggleButton = document.getElementById('toggle-button');
+        const isClickInsideSidebar = sidebar.contains(event.target);
+        const isClickOnToggleButton = toggleButton.contains(event.target);
+
+        if (!isClickInsideSidebar && !isClickOnToggleButton) {
+            sidebar.classList.add('hidden');
+            sidebar.classList.remove('active');
+        }
+    });
+
+
+
+        // Function to open a modal
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        // Function to close a modal
+        function closeModal(modal) {
+            modal.classList.add('hidden');
+        }
+
+        // Add event listeners to open modal buttons
+        document.querySelectorAll('.open-modal').forEach(button => {
+            button.addEventListener('click', function() {
+                const modalId = this.getAttribute('data-modal');
+                openModal(modalId);
+            });
+        });
+
+        // Add event listeners to close modal buttons
+        document.querySelectorAll('.close-modal').forEach(button => {
+            button.addEventListener('click', function() {
+                const modal = this.closest('.modal');
+                closeModal(modal);
+            });
+        }); 
+
+        // Close modal when clicking outside of it
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    closeModal(modal);
+                }
+            });
+        });
+
+            // Handle form submission
+            document.querySelectorAll('.simpleForm').forEach(form => {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const name = this.querySelector('.name').value;
+                const email = this.querySelector('.email').value;
+                console.log(`Name: ${name}, Email: ${email}`);
+                closeModal(this.closest('.modal'));
+            });
+        });
+
+
+
+    // Function to open the chat modal
+    function openChatModal() {
+        document.getElementById('chatModal').classList.remove('hidden');
+    }
+
+    // Function to close the chat modal
+    function closeChatModal() {
+        document.getElementById('chatModal').classList.add('hidden');
+    }
+
+    // Close modal when clicking outside of it
+    document.addEventListener('click', function(event) {
+        const chatModal = document.getElementById('chatModal');
+        if (!chatModal.contains(event.target) && !event.target.closest('.cursor-pointer')) {
+            closeChatModal();
+        }
+    });
+
+    // Prevent modal close when clicking inside the modal
+    document.getElementById('chatModal').addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
+</script>
+
+</body>
+</html>

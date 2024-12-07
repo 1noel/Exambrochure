@@ -1,0 +1,524 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Example</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .modal-body {
+            background-color: #e8f5e9;
+        }
+        .investment-option {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .investment-option.yellow {
+            background-color: #ffeb3b;
+        }
+        .investment-option.red {
+            background-color: #ffcdd2;
+        }
+        .investment-option.green {
+            background-color: #c8e6c9;
+        }
+        .investment-option .header {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .investment-option .details {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Button to Open the Modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        Open Modal
+    </button>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Unique Venture Portfolio</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="row">
+                	
+               
+
+               <div class="col-md-3 mt-2">
+                            <div class="mycard rounded border border-dark">
+                                <div class="m-1">
+                                    <p class="text-danger text-center" style="fon-size:10px;">UVP</p>
+                                    <div class="d-flex justify-content-center">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIzaXwUkgU_WXIK-KyUumnaWPkhnOz4zA4kg&s" style="width:40px;">
+                                    </div>
+                                </div>
+                                    <div class="text-center" style="background-color:black;">
+                                        <span style="font-size: 11px;  margin-bottom: -15%; " class="text-danger" >VENTURE LIGHT 100 days</span> <br>
+                                        <span style="font-size: 11px;" class="text-white" >0.8%-1.5%</span>
+                                    </div>
+
+                                    <div class="mt-1 px-1 text-center ">
+
+                            <span  style="font-size: 10px; margin-bottom:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Min $50-Max$999</span> <br>
+                            <span  style="font-size: 10px; margin-to:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Total return:150%</span>
+
+                            <div class="my-1 text-center">
+                                <form action="{{route('ventures')}}" method="post">
+                                   
+                                    <input type="hidden" name="venture" value="uvp1"/>
+
+                            <input type="number" name="amount_invest" placeholder=" Invest (50$ - 999$)"
+                                    class="form-control-smaller  my-1 border p-1  w-100 mx-auto rounded" min="50" max="999" required/>
+                                    <button class="btn btn-dark  px-2"
+                                    style="font-size: 10px; background-color:black;" type="submit">
+                                        INVEST NOW
+                                    </button>
+                                </form>
+                            </div>
+
+                            </div>
+
+                            </div>
+                    </div>
+
+                    <!-- second column  -->
+
+
+                    <div class="col-md-3 mt-2">
+                            <div class="mycard2 rounded border border-dark">
+                                <div class="m-1">
+                                    <p class="text-danger text-center" style="fon-size:10px;">UVP</p>
+                                    <div class="d-flex justify-content-center">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIzaXwUkgU_WXIK-KyUumnaWPkhnOz4zA4kg&s" style="width:40px;">
+                                    </div>
+                                </div>
+                                    <div class="text-center" style="background-color:black;">
+                                        <span style="font-size: 11px;  margin-bottom: -15%; " class="text-danger" >VENTURE LIGHT 100 days</span> <br>
+                                        <span style="font-size: 11px;" class="text-white" >2%-2.5%</span>
+                                    </div>
+
+                                    <div class="mt-1 px-1 text-center ">
+
+                            <span  style="font-size: 10px; margin-bottom:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Min $1k-Max$10k</span> <br>
+                            <span  style="font-size: 10px; margin-to:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Total return:250%</span>
+
+                            <div class="my-1 text-center">
+                                <form action="{{route('ventures')}}" method="post">
+                                   
+                                    <input type="hidden" name="venture" value="uvp2"/>
+
+                            <input type="number" name="amount_invest" placeholder=" Invest (1000$ - 10000$)"
+                                    class="form-control-smaller  my-1 border p-1  w-100 mx-auto rounded" min="1000" max="10000" required/>
+                                    <button class="btn btn-dark  px-2"
+                                    style="font-size: 10px; background-color:black;" type="submit">
+                                        INVEST NOW
+                                    </button>
+                                </form>
+                         </div>
+                            </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Third column  -->
+
+                    <div class="col-md-3 mt-2">
+                            <div class="mycard rounded border border-dark">
+                                <div class="m-1">
+                                    <p class="text-danger text-center" style="fon-size:10px;">UVP</p>
+                                    <div class="d-flex justify-content-center">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIzaXwUkgU_WXIK-KyUumnaWPkhnOz4zA4kg&s" style="width:40px;">
+                                    </div>
+                                </div>
+                                    <div class="text-center" style="background-color:black;">
+                                        <span style="font-size: 11px;  margin-bottom: -15%; " class="text-danger" >VENTURE LIGHT 100 days</span> <br>
+                                        <span style="font-size: 11px;" class="text-white" >2.5%-2.8%</span>
+                                    </div>
+
+                                    <div class="mt-1 px-1 text-center ">
+
+                            <span  style="font-size: 10px; margin-bottom:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Min $10 001-Max$25k</span> <br>
+                            <span  style="font-size: 10px; margin-to:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Total return:280%</span>
+
+                            <div class="my-1 text-center">
+                                <form action="{{route('ventures')}}" method="post">
+                                 
+                                    <input type="hidden" name="venture" value="uvp3"/>
+
+                            <input type="number" name="amount_invest" placeholder=" Invest (10001$ - 25000$)"
+                                    class="form-control-smaller  my-1 border p-1  w-100 mx-auto rounded" min="10001" max="25000" required/>
+                                    <button class="btn btn-dark  px-2"
+                                    style="font-size: 10px; background-color:black;" type="submit">
+                                        INVEST NOW
+                                    </button>
+                                </form>
+                         </div>
+                            </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Fourth column -->
+
+                        <div class="col-md-3 mt-2">
+                            <div class="mycard rounded border border-dark">
+                                <div class="m-1">
+                                    <p class="text-danger text-center" style="fon-size:10px;">UVP</p>
+                                    <div class="d-flex justify-content-center">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIzaXwUkgU_WXIK-KyUumnaWPkhnOz4zA4kg&s" style="width:40px;">
+                                    </div>
+                                </div>
+                                    <div class="text-center" style="background-color:black;">
+                                        <span style="font-size: 11px;  margin-bottom: -15%; " class="text-danger" >VENTURE LIGHT 100 days</span> <br>
+                                        <span style="font-size: 11px;" class="text-white" >3%</span>
+                                    </div>
+
+                                    <div class="mt-1 px-1 text-center ">
+
+                            <span  style="font-size: 10px; margin-bottom:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Min $25k-Max$100k</span> <br>
+                            <span  style="font-size: 10px; margin-to:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Total return:300%</span>
+
+                            <div class="my-1 text-center">
+                                <form action="{{route('ventures')}}" method="post">
+                                    
+                                    <input type="hidden" name="venture" value="uvp4"/>
+
+                            <input type="number" name="amount_invest" placeholder=" Invest (25000$ - 100000$)"
+                                    class="form-control-smaller  my-1 border p-1  w-100 mx-auto rounded" min="25000" max="100000" required/>
+                                    <button class="btn btn-dark  px-2"
+                                    style="font-size: 10px; background-color:black;" type="submit">
+                                        INVEST NOW
+                                    </button>
+                                </form>
+                         </div>
+                            </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Secon row -->
+
+                        <div class="col-md-3 mt-2">
+                            <div class="mycard rounded border border-dark">
+                                <div class="m-1">
+                                    <p class="text-danger text-center" style="fon-size:10px;">UVP</p>
+                                    <div class="d-flex justify-content-center">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIzaXwUkgU_WXIK-KyUumnaWPkhnOz4zA4kg&s" style="width:40px;">
+                                    </div>
+                                </div>
+                                    <div class="text-center" style="background-color:black;">
+                                        <span style="font-size: 11px;  margin-bottom: -15%; " class="text-danger" >VENTURE LIGHT 200 days</span> <br>
+                                        <span style="font-size: 11px;" class="text-white" >2%</span>
+                                    </div>
+
+                                    <div class="mt-1 px-1 text-center ">
+
+                            <span  style="font-size: 10px; margin-bottom:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Min $2k-Max$19k</span> <br>
+                            <span  style="font-size: 10px; margin-to:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Total return:400%</span>
+
+                            <div class="my-1 text-center">
+                                <form action="{{route('ventures')}}" method="post">
+                                   
+                                    <input type="hidden" name="venture" value="uvp5"/>
+
+                            <input type="number" name="amount_invest" placeholder=" Invest (2000$ - 19000$)"
+                                    class="form-control-smaller  my-1 border p-1  w-100 mx-auto rounded" min="2000" max="19000" required/>
+                                    <button class="btn btn-dark  px-2"
+                                    style="font-size: 10px; background-color:black;" type="submit">
+                                        INVEST NOW
+                                    </button>
+                                </form>
+                         </div>
+                            </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mt-2">
+                            <div class="mycard2 rounded border border-dark">
+                                <div class="m-1">
+                                    <p class="text-danger text-center" style="fon-size:10px;">UVP</p>
+                                    <div class="d-flex justify-content-center">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIzaXwUkgU_WXIK-KyUumnaWPkhnOz4zA4kg&s" style="width:40px;">
+                                    </div>
+                                </div>
+                                    <div class="text-center" style="background-color:black;">
+                                        <span style="font-size: 11px;  margin-bottom: -15%; " class="text-danger" >VENTURE LIGHT 200 days</span> <br>
+                                        <span style="font-size: 11px;" class="text-white" >2.5%</span>
+                                    </div>
+
+                                    <div class="mt-1 px-1 text-center ">
+
+                            <span  style="font-size: 10px; margin-bottom:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Min $20k-Max$45k</span> <br>
+                            <span  style="font-size: 10px; margin-to:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Total return:500%</span>
+
+                            <div class="my-1 text-center">
+                                <form action="{{route('ventures')}}" method="post">
+                                    
+                                    <input type="hidden" name="venture" value="uvp6"/>
+
+                            <input type="number" name="amount_invest" placeholder=" Invest (20000$ - 45000$)"
+                                    class="form-control-smaller  my-1 border p-1  w-100 mx-auto rounded" min="20000" max="45000" required/>
+                                    <button class="btn btn-dark  px-2"
+                                    style="font-size: 10px; background-color:black;" type="submit">
+                                        INVEST NOW
+                                    </button>
+                                </form>
+                         </div>
+
+                            </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mt-2">
+                            <div class="mycard rounded border border-dark">
+                                <div class="m-1">
+                                    <p class="text-danger text-center" style="fon-size:10px;">UVP</p>
+                                    <div class="d-flex justify-content-center">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIzaXwUkgU_WXIK-KyUumnaWPkhnOz4zA4kg&s" style="width:40px;">
+                                    </div>
+                                </div>
+                                    <div class="text-center" style="background-color:black;">
+                                        <span style="font-size: 11px;  margin-bottom: -15%; " class="text-danger" >VENTURE LIGHT 200 days</span> <br>
+                                        <span style="font-size: 11px;" class="text-white" >3%</span>
+                                    </div>
+
+                                    <div class="mt-1 px-1 text-center ">
+
+                            <span  style="font-size: 10px; margin-bottom:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Min $50k-Max$90k</span> <br>
+                            <span  style="font-size: 10px; margin-to:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Total return:600%</span>
+                            <div class="my-1 text-center">
+                                <form action="{{route('ventures')}}" method="post">
+                                  
+                                    <input type="hidden" name="venture" value="uvp7"/>
+
+                            <input type="number" name="amount_invest" placeholder=" Invest (50000$ - 90000$)"
+                                    class="form-control-smaller  my-1 border p-1  w-100 mx-auto rounded" min="50000" max="90000" required/>
+                                    <button class="btn btn-dark  px-2"
+                                    style="font-size: 10px; background-color:black;" type="submit">
+                                        INVEST NOW
+                                    </button>
+                                </form>
+                         </div>
+
+                            </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mt-2">
+                            <div class="mycard rounded border border-dark">
+                                <div class="m-1">
+                                    <p class="text-danger text-center" style="fon-size:10px;">UVP</p>
+                                    <div class="d-flex justify-content-center">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIzaXwUkgU_WXIK-KyUumnaWPkhnOz4zA4kg&s" style="width:40px;">
+                                    </div>
+                                </div>
+                                    <div class="text-center" style="background-color:black;">
+                                        <span style="font-size: 11px;  margin-bottom: -15%; " class="text-danger" >VENTURE LIGHT 200 days</span> <br>
+                                        <span style="font-size: 11px;" class="text-white" >3.5%</span>
+                                    </div>
+
+                                    <div class="mt-1 px-1 text-center ">
+
+                            <span  style="font-size: 10px; margin-bottom:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Min $100k-Max$500k</span> <br>
+                            <span  style="font-size: 10px; margin-to:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Total return:700%</span>
+
+                            <div class="my-1 text-center">
+                                <form action="{{route('ventures')}}" method="post">
+                                   
+                                    <input type="hidden" name="venture" value="uvp8"/>
+
+                            <input type="number" name="amount_invest" placeholder=" Invest (100000$ - 500000$)"
+                                    class="form-control-smaller  my-1 border p-1  w-100 mx-auto rounded" min="100000" max="500000" required/>
+                                    <button class="btn btn-dark  px-2"
+                                    style="font-size: 10px; background-color:black;" type="submit">
+                                        INVEST NOW
+                                    </button>
+                                </form>
+                         </div>
+                            </div>
+
+                            </div>
+                        </div>
+
+                        <!--Third column  -->
+
+                        <div class="col-md-3 mt-2">
+                            <div class="mycard rounded border border-dark">
+                                <div class="m-1">
+                                    <p class="text-danger text-center" style="fon-size:10px;">UVP</p>
+                                    <div class="d-flex justify-content-center">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIzaXwUkgU_WXIK-KyUumnaWPkhnOz4zA4kg&s" style="width:40px;">
+                                    </div>
+                                </div>
+                                    <div class="text-center" style="background-color:black;">
+                                        <span style="font-size: 11px;  margin-bottom: -15%; " class="text-danger" >VENTURE LIGHT 600 days</span> <br>
+                                        <span style="font-size: 11px;" class="text-white" > 1.8%-2%</span>
+                                    </div>
+
+                                    <div class="mt-1 px-1 text-center ">
+
+                            <span  style="font-size: 10px; margin-bottom:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Min $10k-Max$50kk</span> <br>
+                            <span  style="font-size: 10px; margin-to:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Total return:1200%</span>
+
+                            <div class="my-1 text-center">
+                                <form action="{{route('ventures')}}" method="post">
+                                   
+                                    <input type="hidden" name="venture" value="uvp9"/>
+
+                            <input type="number" name="amount_invest" placeholder=" Invest (10000$ - 50000$)"
+                                    class="form-control-smaller  my-1 border p-1  w-100 mx-auto rounded" min="10000" max="50000" required/>
+                                    <button class="btn btn-dark  px-2"
+                                    style="font-size: 10px; background-color:black;" type="submit">
+                                        INVEST NOW
+                                    </button>
+                                </form>
+                         </div>
+
+                            </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mt-2">
+                            <div class="mycard2 rounded border border-dark">
+                                <div class="m-1">
+                                    <p class="text-danger text-center" style="fon-size:10px;">UVP</p>
+                                    <div class="d-flex justify-content-center">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIzaXwUkgU_WXIK-KyUumnaWPkhnOz4zA4kg&s" style="width:40px;">
+                                    </div>
+                                </div>
+                                    <div class="text-center" style="background-color:black;">
+                                        <span style="font-size: 11px;  margin-bottom: -15%; " class="text-danger" >VENTURE LIGHT 600 days</span> <br>
+                                        <span style="font-size: 11px;" class="text-white" >2%</span>
+                                    </div>
+
+                                    <div class="mt-1 px-1 text-center ">
+
+                            <span  style="font-size: 10px; margin-bottom:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Min $50 001-Max$200k</span> <br>
+                            <span  style="font-size: 10px; margin-to:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Total return:1200%</span>
+
+                            <div class="my-1 text-center">
+                                <form action="{{route('ventures')}}" method="post">
+                                   
+                                    <input type="hidden" name="venture" value="uvp10"/>
+
+                            <input type="number" name="amount_invest" placeholder=" Invest (50001$ - 200000$)"
+                                    class="form-control-smaller  my-1 border p-1  w-100 mx-auto rounded" min="50001" max="200000" required/>
+                                    <button class="btn btn-dark  px-2"
+                                    style="font-size: 10px; background-color:black;" type="submit">
+                                        INVEST NOW
+                                    </button>
+                                </form>
+                         </div>
+                            </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mt-2">
+                            <div class="mycard rounded border border-dark">
+                                <div class="m-1">
+                                    <p class="text-danger text-center" style="fon-size:10px;">UVP</p>
+                                    <div class="d-flex justify-content-center">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIzaXwUkgU_WXIK-KyUumnaWPkhnOz4zA4kg&s" style="width:40px;">
+                                    </div>
+                                </div>
+                                    <div class="text-center" style="background-color:black;">
+                                        <span style="font-size: 11px;  margin-bottom: -15%; " class="text-danger" >VENTURE LIGHT 600 days</span> <br>
+                                        <span style="font-size: 11px;" class="text-white" >2.5%-2.5%</span>
+                                    </div>
+
+                                    <div class="mt-1 px-1 text-center ">
+
+                            <span  style="font-size: 10px; margin-bottom:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Min $200 001-Max$500k</span> <br>
+                            <span  style="font-size: 10px; margin-to:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Total return:1500%</span>
+                            <div class="my-1 text-center">
+                                <form action="{{route('ventures')}}" method="post">
+                                    
+                                    <input type="hidden" name="venture" value="uvp11"/>
+
+                            <input type="number" name="amount_invest" placeholder=" Invest (200001$ - 500000$)"
+                                    class="form-control-smaller  my-1 border p-1  w-100 mx-auto rounded" min="200001" max="500000" required/>
+                                    <button class="btn btn-dark  px-2"
+                                    style="font-size: 10px; background-color:black;" type="submit">
+                                        INVEST NOW
+                                    </button>
+                                </form>
+                         </div>
+                            </div>
+
+                            </div>
+                        </div>
+
+
+                    <div class="col-md-3 mt-2">
+                            <div class="mycard rounded border border-dark">
+                                <div class="m-1">
+                                    <p class="text-danger text-center" style="fon-size:10px;">UVP</p>
+                                    <div class="d-flex justify-content-center">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIzaXwUkgU_WXIK-KyUumnaWPkhnOz4zA4kg&s" style="width:40px;">
+                                    </div>
+                                </div>
+                                    <div class="text-center" style="background-color:black;">
+                                        <span style="font-size: 11px;  margin-bottom: -15%; " class="text-danger" >VENTURE LIGHT 600 days</span> <br>
+                                        <span style="font-size: 11px;" class="text-white" >3%</span>
+                                    </div>
+
+                                    <div class="mt-1 px-1 text-center ">
+
+                            <span  style="font-size: 10px; margin-bottom:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Min $500k-Max$10M</span> <br>
+                            <span  style="font-size: 10px; margin-to:-22px; font-weight:bold;" class=" border-bottom border-2 border-bottom-dashed">Total return:1800%</span>
+
+                            <div class="my-1 text-center">
+                                <form action="{{route('ventures')}}" method="post">
+                                   
+                                    <input type="hidden" name="venture" value="uvp12"/>
+
+                            <input type="number" name="amount_invest" placeholder=" Invest (500000$ - 10000000$)"
+                                    class="form-control-smaller  my-1 border p-1  w-100 mx-auto rounded" min="500000" max="10000000" required/>
+                                    <button class="btn btn-dark  px-2"
+                                    style="font-size: 10px; background-color:black;" type="submit">
+                                        INVEST NOW
+                                    </button>
+                                </form>
+                         </div>
+                            </div>
+
+                            </div>
+                        </div>
+ </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Use Activation Code</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
